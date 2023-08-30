@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://baacpgtr5rfue"]
+
+[ext_resource type="Texture2D" uid="uid://bkcbxx7d0vvf1" path="res://icon.svg" id="1_5hwnn"]
+[ext_resource type="PackedScene" uid="uid://ciq283q6k6vec" path="res://fighter.tscn" id="1_mj7t2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gumru"]
+size = Vector2(1300, 20)
+
+[node name="Level" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(600, 648)
+shape = SubResource("RectangleShape2D_gumru")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(600, 644)
+scale = Vector2(10, 0.1)
+texture = ExtResource("1_5hwnn")
+
+[node name="Fighter" parent="." instance=ExtResource("1_mj7t2")]
+position = Vector2(600, 512)
