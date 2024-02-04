@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ciq283q6k6vec"]
+[gd_scene load_steps=19 format=3 uid="uid://ciq283q6k6vec"]
 
 [ext_resource type="Script" path="res://fighter.gd" id="1_8g1uw"]
 [ext_resource type="Texture2D" uid="uid://cbuqqd26rx6cq" path="res://IMG/Палочка (Walk).png" id="3_hsxp1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ng42k7w7ttc6" path="res://IMG/Палочка (Run).png" id="4_1bv1a"]
 [ext_resource type="Texture2D" uid="uid://dnge464lnf5g3" path="res://IMG/Палочка (Jump).png" id="5_hf4ur"]
 [ext_resource type="Texture2D" uid="uid://d1pbb6rnkd3qq" path="res://IMG/Палочка (Climb).png" id="6_qekwx"]
+[ext_resource type="Texture2D" uid="uid://m1vkitdcnce5" path="res://IMG/Палочка (ClimbToGround).png" id="7_5q36m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e0anf"]
 radius = 16.0
@@ -22,10 +23,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,6 +39,59 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("6_qekwx")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_30llu"]
+resource_name = "ClimbToGround"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 19]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_5q36m")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
 }
 
 [sub_resource type="Animation" id="Animation_127br"]
@@ -68,6 +122,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("3_r64sm")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
 
 [sub_resource type="Animation" id="Animation_awvgg"]
 resource_name = "Jump"
@@ -96,6 +162,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("5_hf4ur")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
 
 [sub_resource type="Animation" id="Animation_2appl"]
 length = 0.001
@@ -122,6 +200,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
 }
 
 [sub_resource type="Animation" id="Animation_f0og3"]
@@ -152,6 +242,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("4_1bv1a")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
 
 [sub_resource type="Animation" id="Animation_mpnir"]
 resource_name = "Walk"
@@ -181,10 +283,23 @@ tracks/1/keys = {
 "update": 1,
 "values": [ExtResource("3_hsxp1")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7dt6u"]
 _data = {
 "Climb": SubResource("Animation_v0voj"),
+"ClimbToGround": SubResource("Animation_30llu"),
 "Idle": SubResource("Animation_127br"),
 "Jump": SubResource("Animation_awvgg"),
 "RESET": SubResource("Animation_2appl"),
@@ -192,8 +307,11 @@ _data = {
 "Walk": SubResource("Animation_mpnir")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rjqe"]
+size = Vector2(8, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8joja"]
-size = Vector2(8, 36)
+size = Vector2(8, 19)
 
 [node name="Fighter" type="CharacterBody2D"]
 collision_layer = 2
@@ -206,9 +324,9 @@ shape = SubResource("CapsuleShape2D_e0anf")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(200, 0)
-offset_left = -100.0
+offset_left = -196.0
 offset_top = -84.0
-offset_right = 100.0
+offset_right = 196.0
 offset_bottom = -58.0
 text = "Idle"
 horizontal_alignment = 1
@@ -227,15 +345,16 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LegsOnLadder"]
-position = Vector2(0, 50)
-shape = SubResource("RectangleShape2D_8joja")
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_8rjqe")
 
-[node name="BodyOnLadder" type="Area2D" parent="."]
+[node name="HeadOnLadder" type="Area2D" parent="."]
+position = Vector2(0, -36)
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyOnLadder"]
-position = Vector2(0, -16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadOnLadder"]
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_8joja")
 
 [node name="Timer" type="Timer" parent="."]
@@ -244,6 +363,6 @@ one_shot = true
 
 [connection signal="area_entered" from="LegsOnLadder" to="." method="_on_legs_on_ladder_area_entered"]
 [connection signal="area_exited" from="LegsOnLadder" to="." method="_on_legs_on_ladder_area_exited"]
-[connection signal="area_entered" from="BodyOnLadder" to="." method="_on_body_on_ladder_area_entered"]
-[connection signal="area_exited" from="BodyOnLadder" to="." method="_on_body_on_ladder_area_exited"]
+[connection signal="area_entered" from="HeadOnLadder" to="." method="_on_head_on_ladder_area_entered"]
+[connection signal="area_exited" from="HeadOnLadder" to="." method="_on_head_on_ladder_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

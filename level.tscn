@@ -8,7 +8,7 @@
 size = Vector2(1300, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnab3"]
-size = Vector2(28, 221)
+size = Vector2(24, 221)
 
 [node name="Level" type="Node2D"]
 
@@ -55,4 +55,4 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_wnab3")
 
 [node name="Fighter" parent="." instance=ExtResource("1_mj7t2")]
-position = Vector2(852, 352)
+position = Vector2(881, 570)
